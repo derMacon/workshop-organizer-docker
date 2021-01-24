@@ -1,4 +1,4 @@
-package com.iamvickyav.dockerdemo;
+package com.dermacon.workshop;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

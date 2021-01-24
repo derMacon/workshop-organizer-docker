@@ -1,4 +1,4 @@
-package com.iamvickyav.dockerdemo;
+package com.dermacon.workshop;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
