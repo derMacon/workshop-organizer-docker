@@ -16,6 +16,7 @@ Steps used to build:
 * build spring application (`mvn clean package`)
 * build docker image using the Dockerimage (`./workshop-organizer/Dockerfile`)
 * run containers with `docker-compose up`
+* website will be available at `localhost:8888`
 
 ## Technologies used
 * Spring Boot
