@@ -17,7 +17,9 @@ pipeline {
         stage ('Maven Build') {
             steps {
                 dir('workshop-app') {
-                    sh 'mvn clean package'
+                    dir('spring-project') {
+                        sh 'mvn clean package'
+                    }
                 }
             }
         }
