@@ -16,7 +16,7 @@ pipeline {
 
         stage ('Maven Build') {
             steps {
-                dir('workshop-app') {
+                dir('workshop-organizer') {
                     dir('spring-project') {
                         sh 'pwd'
                         sh 'ls -la'
@@ -28,7 +28,7 @@ pipeline {
 
         stage ('Build Docker Image') {
             steps {
-                dir('workshop-app') {
+                dir('workshop-organizer') {
                     sh 'docker-compose build'
                 }
             }
@@ -36,7 +36,7 @@ pipeline {
 
         stage ('Run Docker Containers') {
             steps {
-                dir('workshop-app') {
+                dir('workshop-organizer') {
                     sh 'docker-compose down'
                     sh 'docker-compose up -d'
                 }
