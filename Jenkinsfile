@@ -14,6 +14,10 @@ pipeline {
 
     stages {
 
+        stage ('Set Environment variables') {
+            sh 'source ./export-env.sh'
+        }
+
         stage ('Maven Build') {
             steps {
                 dir('workshop-organizer') {
