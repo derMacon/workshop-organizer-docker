@@ -1,6 +1,6 @@
 #!/bin/bash
 
-echo set necessary environment varibles
+echo set necessary environment variables
 cd workshop-organizer/
 source ./export-env.sh
 
