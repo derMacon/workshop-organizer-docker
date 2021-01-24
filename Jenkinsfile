@@ -40,7 +40,6 @@ pipeline {
         stage ('Build Docker Image') {
             steps {
                 dir('workshop-organizer') {
-                    sh 'docker info'
                     sh 'docker-compose build'
                 }
             }
