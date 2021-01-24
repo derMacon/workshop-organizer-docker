@@ -10,14 +10,13 @@ import java.util.List;
 public class RestController {
 
     @Autowired
-    private UserRepository userRepository;
+    private AppUserRepository appUserRepository;
 
 
     @RequestMapping("/test")
     public String test() {
-        userRepository.save(new Users("testinput1"));
         List<String> result = new ArrayList<String>();
-        userRepository.findAll().forEach(e -> result.add(e.getUsername()));
+        appUserRepository.findAll().forEach(e -> result.add(e.getUsername()));
         return "test1: " + result;
     }
 
