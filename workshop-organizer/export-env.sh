@@ -1,4 +1,4 @@
 #!/bin/bash
 
-export DB_USER="user"
-export DB_PASSWORD="password"
+export DATABASE_USER="user"
+export DATABASE_PASSWORD="password"
