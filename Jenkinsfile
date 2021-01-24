@@ -3,10 +3,7 @@ pipeline {
     environment {
         registry = "dermacon/jenkins-test"
         registryCredentials = 'dermacon'
-        
-        sh 'chmod +x export-env.sh'
-        sh '. ./export-env.sh'
-        DB_USER = sh '${DB_USER}'
+        DB_USER = 'user'
         DB_PASSWORD = 'password'
     }
 
