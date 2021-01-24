@@ -1,5 +1,8 @@
 pipeline {
 
+    sh 'chmod +x workshop-organizer/export-env.sh'
+    sh '. ./workshop-organizer/export-env.sh'
+
     environment {
         registry = "dermacon/jenkins-test"
         registryCredentials = 'dermacon'
@@ -29,8 +32,6 @@ pipeline {
                     dir('spring-project') {
                         sh 'pwd'
                         sh 'ls -la'
-                        sh 'chmod +x export-env.sh'
-                        sh '. ./export-env.sh'
                         sh 'mvn clean package'
                     }
                 }
@@ -40,8 +41,6 @@ pipeline {
         stage ('Build Docker Image') {
             steps {
                 dir('workshop-organizer') {
-                    sh 'chmod +x export-env.sh'
-                    sh '. ./export-env.sh'
                     sh 'docker-compose build'
                 }
             }
@@ -50,8 +49,6 @@ pipeline {
         stage ('Run Docker Containers') {
             steps {
                 dir('workshop-organizer') {
-                    sh 'chmod +x export-env.sh'
-                    sh '. ./export-env.sh'
                     sh 'docker-compose down'
                     sh 'docker-compose up -d'
                 }
