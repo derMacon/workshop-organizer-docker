@@ -18,6 +18,8 @@ pipeline {
             steps {
                 dir('workshop-app') {
                     dir('spring-project') {
+                        sh 'pwd'
+                        sh 'ls -la'
                         sh 'mvn clean package'
                     }
                 }
