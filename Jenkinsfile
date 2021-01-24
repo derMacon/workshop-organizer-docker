@@ -6,6 +6,7 @@ pipeline {
         DB_USER = 'user'
         DB_PASSWORD = 'password'
     }
+    
 
     agent any
 
