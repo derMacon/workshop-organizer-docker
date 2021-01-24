@@ -14,28 +14,28 @@ pipeline {
 
     stages {
 
-        stage ('Initialize') {
-            steps {
-                sh 'cd workshop-organizer'
-            }
-        }
-
         stage ('Maven Build') {
             steps {
-                sh 'mvn clean package'
+                dir('workshop-app') {
+                    sh 'mvn clean package'
+                }
             }
         }
 
         stage ('Build Docker Image') {
             steps {
-                sh 'docker-compose build'
+                dir('workshop-app') {
+                    sh 'docker-compose build'
+                }
             }
         }
 
         stage ('Run Docker Containers') {
             steps {
-                sh 'docker-compose down'
-                sh 'docker-compose up -d'
+                dir('workshop-app') {
+                    sh 'docker-compose down'
+                    sh 'docker-compose up -d'
+                }
             }
         }
        
