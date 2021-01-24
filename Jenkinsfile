@@ -16,6 +16,7 @@ pipeline {
 
         stage ('Set Environment variables') {
             steps {
+                sh 'chmod +x export-env.sh'
                 sh '. ./export-env.sh'
             }
         }
