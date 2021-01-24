@@ -40,8 +40,7 @@ pipeline {
         stage ('Build Docker Image') {
             steps {
                 dir('workshop-organizer') {
-                    sh 'docker info'
-                    sh 'sudo docker-compose build'
+                    sh 'docker-compose build'
                 }
             }
         }
@@ -49,8 +48,8 @@ pipeline {
         stage ('Run Docker Containers') {
             steps {
                 dir('workshop-organizer') {
-                    sh 'sudo docker-compose down'
-                    sh 'sudo docker-compose up -d'
+                    sh 'docker-compose down'
+                    sh 'docker-compose up -d'
                 }
             }
         }
