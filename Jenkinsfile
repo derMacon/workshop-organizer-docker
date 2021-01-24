@@ -16,7 +16,7 @@ pipeline {
 
         stage ('Set Environment variables') {
             steps {
-                sh 'source ./export-env.sh'
+                sh '. ./export-env.sh'
             }
         }
 
