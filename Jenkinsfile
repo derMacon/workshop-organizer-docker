@@ -15,7 +15,9 @@ pipeline {
     stages {
 
         stage ('Set Environment variables') {
-            sh 'source ./export-env.sh'
+            steps {
+                sh 'source ./export-env.sh'
+            }
         }
 
         stage ('Maven Build') {
