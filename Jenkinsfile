@@ -25,21 +25,22 @@ pipeline {
             }
         }
 
-        stage ('Maven Build') {
-            steps {
-                dir('workshop-organizer') {
-                    dir('spring-project') {
-                        sh 'pwd'
-                        sh 'ls -la'
-                        sh 'mvn clean package'
-                    }
-                }
-            }
-        }
+//         stage ('Maven Build') {
+//             steps {
+//                 dir('workshop-organizer') {
+//                     dir('spring-project') {
+//                         sh 'pwd'
+//                         sh 'ls -la'
+//                         sh 'mvn clean package'
+//                     }
+//                 }
+//             }
+//         }
 
         stage ('Build Docker Image') {
             steps {
                 dir('workshop-organizer') {
+                    sh 'docker -v'
                     sh 'docker-compose build'
                 }
             }
