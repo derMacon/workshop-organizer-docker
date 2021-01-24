@@ -1,11 +1,10 @@
 pipeline {
 
-    sh 'chmod +x workshop-organizer/export-env.sh'
-    sh '. ./workshop-organizer/export-env.sh'
-
     environment {
         registry = "dermacon/jenkins-test"
         registryCredentials = 'dermacon'
+        DB_USER = 'user'
+        DB_PASSWORD = 'password'
     }
 
     agent any
