@@ -6,7 +6,7 @@ import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;
 
 @SpringBootApplication
-public class DockerDemoApp extends SpringBootServletInitializer {
+public class WorkshopApp extends SpringBootServletInitializer {
 
 	@Override
 	protected SpringApplicationBuilder configure(SpringApplicationBuilder builder) {
@@ -14,6 +14,6 @@ public class DockerDemoApp extends SpringBootServletInitializer {
 	}
 
 	public static void main(String[] args) {
-		SpringApplication.run(DockerDemoApp.class, args);
+		SpringApplication.run(WorkshopApp.class, args);
 	}
 }

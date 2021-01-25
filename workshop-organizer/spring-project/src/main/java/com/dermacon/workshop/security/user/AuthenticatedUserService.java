@@ -1,6 +1,6 @@
 package com.dermacon.workshop.security.user;
 
-import com.dermacon.workshop.AppUserRepository;
+import com.dermacon.workshop.data.AppUserRepository;
 import com.dermacon.workshop.data.AppUser;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
