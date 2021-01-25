@@ -2,7 +2,8 @@
 
 echo set necessary environment variables
 cd workshop-organizer/
-source ./export-env.sh
+#source ./export-env.sh
+source workshop-organizer/variables.env
 
 echo build spring application
 cd spring-project/

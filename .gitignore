@@ -69,3 +69,7 @@ data_set.sql # private information
 */.idea/
 *.iml
 */*.iml
+.gitsecret/keys/random_seed
+
+# git-secret: all encrypted files must be ignored by main repository
+workshop-organizer/variables.env
