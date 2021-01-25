@@ -31,3 +31,4 @@ services:
       - DATABASE_PASSWORD=${DATABASE_PASSWORD}
       - DATABASE_NAME=workshop_app
       - DATABASE_PORT=5432
+      - spring.profiles.active=prod

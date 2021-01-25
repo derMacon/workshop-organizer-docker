@@ -11,8 +11,8 @@ services:
       - "5432:5432"
     environment:
       - DEBUG=false
-      - POSTGRES_USER=user
-      - POSTGRES_PASSWORD=password
+      - POSTGRES_USER=dev-user
+      - POSTGRES_PASSWORD=dev-password
       - POSTGRES_DB=workshop_app
     volumes:
       - postgresql-data:/var/lib/postgresql
