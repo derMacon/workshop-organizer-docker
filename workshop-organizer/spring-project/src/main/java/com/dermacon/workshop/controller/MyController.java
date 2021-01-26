@@ -1,4 +1,4 @@
-package com.dermacon.workshop;
+package com.dermacon.workshop.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -10,11 +10,8 @@ import org.springframework.web.bind.annotation.RestController;
 @Controller
 public class MyController {
 
-    @RequestMapping(value = "/index")
-    public String hello(Model model, @RequestParam(value="name") String name) {
-        model.addAttribute("name", name);
+    @RequestMapping("/")
+    public String index() {
         return "index";
     }
 }
-
-

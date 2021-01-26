@@ -1,4 +1,4 @@
-package com.dermacon.workshop;
+package com.dermacon.workshop.controller;
 
 import com.dermacon.workshop.data.AppUserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
