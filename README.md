@@ -1,5 +1,6 @@
 # workshop-organizer-docker
-Webapp to manage workshops. 
+* Webapp to manage workshops. 
+* Live [Server](http://168.119.120.2:8888/workshop-organizer/)
 
 * WIP: The screenshot is just a mockup. This project is a derivative from my other project `workshop-organizer` where I try to port the project to the docker infrastructure.
 
