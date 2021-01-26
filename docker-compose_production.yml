@@ -19,7 +19,7 @@ services:
     restart: unless-stopped
 
   myapp-main:
-    build: .
+    build: ./spring-project
     restart: on-failure
     depends_on:
       - postgreSQL
