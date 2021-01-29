@@ -19,6 +19,10 @@ insert into course (course_id, host_id, course_name, max_participant_count)
 values (3, 1, 'course1', 4)
 ON CONFLICT DO NOTHING;
 
-insert into announcement(title, publishing_date, course_id)
-values ('announcement1', '01-01-2021', 3)
+insert into announcement(announcement_id, title, publishing_date, course_id)
+values (30, 'announcement1', '01-01-2021', 3)
+ON CONFLICT DO NOTHING;
+
+insert into announcement(announcement_id, title, publishing_date, course_id)
+values (31, 'announcement2', '02-01-2021', 3)
 ON CONFLICT DO NOTHING;
