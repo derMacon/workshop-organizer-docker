@@ -82,10 +82,18 @@ public class CourseController extends ModelAttributeProvider {
         return SPECIFIC_PATH + "specificCourse";
     }
 
-//    @RequestMapping(path = "/specific")
-//    public String nextAnnouncement() {
+//    @RequestMapping(path = "/specific/showNextAnnouncement")
+//    public String viewNextAnnouncement(Model model, @RequestParam long courseId) {
+//        int announcementCnt;
+//        try {
+//            announcementCnt = courseService.getCourse(courseId).getAnnouncements().size();
+//        } catch (NonExistentCourseException e) {
+//            model.addAttribute("errorCode", e.getErrorCode());
+//            return "error/error";
+//        }
+//
 //        currAnnouncementIdx++;
-//        currAnnouncementIdx = currAnnouncementIdx % courseService.
+//        currAnnouncementIdx = currAnnouncementIdx % announcementCnt;
 //    }
 
 

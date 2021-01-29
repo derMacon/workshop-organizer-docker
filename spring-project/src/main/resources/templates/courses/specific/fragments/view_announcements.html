@@ -13,7 +13,8 @@
     <li>No announcement yet</li>
 </ul>
 
-<div class="card" th:each="announcement : ${currCourse.announcements}">
+
+<!--<div class="card" th:each="announcement : ${currCourse.announcements}">-->
     <div class="card-body">
         <h5 class="card-title" th:text="${announcement.title}">title</h5>
         <h6 class="card-subtitle mb-2 text-muted"
@@ -30,13 +31,14 @@
 
         <div class="btn-group">
             <a href="#" class="card-link">See full announcment</a>
-            <a href="#" class="card-link text-secondary" th:onclick="'alert(\'test\');'">Previous
-                announcement</a>
+<!--            <a th:href="@{/courses/specific/showNextAnnouncement}?courseId=${currCourse.courseId}"-->
+<!--               class="card-link text-secondary">Previous announcement</a>-->
+            <a href="#" class="card-link text-secondary">Previous announcement</a>
             <a href="#" class="card-link text-secondary">Next announcement</a>
         </div>
 
     </div>
-</div>
+<!--</div>-->
 
 </body>
 </html>

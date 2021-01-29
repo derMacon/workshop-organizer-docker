@@ -70,6 +70,7 @@ data_set.sql # private information
 *.iml
 */*.iml
 .gitsecret/keys/random_seed
+rebuild.sh
 
 # git-secret: all encrypted files must be ignored by main repository
 .env
