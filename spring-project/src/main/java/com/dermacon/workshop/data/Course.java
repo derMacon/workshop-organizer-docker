@@ -207,10 +207,7 @@ public class Course {
     @Override
     public int hashCode() {
         return host.hashCode()
-                * announcements.hashCode()
                 * courseName.hashCode()
-                * courseSummary.hashCode()
-                * courseDescription.hashCode()
                 * maxParticipantCount
                 * participants.hashCode();
     }

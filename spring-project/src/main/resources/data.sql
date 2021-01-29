@@ -7,6 +7,10 @@ values (1, 'admin_fst', 'admin_sur', 'admin@mail.com', 0)
 ON CONFLICT DO NOTHING;
 
 
-insert into course (host_id, course_name, max_participant_count)
-values (1, 'course1', 4)
+insert into course (course_id, host_id, course_name, max_participant_count)
+values (3, 1, 'course1', 4)
+ON CONFLICT DO NOTHING;
+
+insert into announcement(title, publishing_date, course_id)
+values ('announcement1', '01-01-2021', 3)
 ON CONFLICT DO NOTHING;
