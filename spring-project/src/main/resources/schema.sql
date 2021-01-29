@@ -23,9 +23,3 @@ create table if not exists person
     user_id   integer      not null,
     foreign key (user_id) references app_user (user_id)
 );
-
-create table test_table
-(
-    id        serial primary key,
-    firstname varchar(500) not null
-);
