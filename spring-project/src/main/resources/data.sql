@@ -5,3 +5,8 @@ ON CONFLICT DO NOTHING;
 insert into person (person_id, firstname, surname, email, user_id)
 values (1, 'admin_fst', 'admin_sur', 'admin@mail.com', 0)
 ON CONFLICT DO NOTHING;
+
+
+insert into course (host_id, course_name, max_participant_count)
+values (1, 'course1', 4)
+ON CONFLICT DO NOTHING;
