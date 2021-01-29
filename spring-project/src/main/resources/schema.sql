@@ -53,3 +53,11 @@ create table if not exists course_person
     foreign key (person_id) references person(person_id),
     CONSTRAINT bill_product_pkey PRIMARY KEY (course_id, person_id)
 );
+
+create table if not exists meeting(
+    meeting_id serial primary key,
+    meeting_date date not null,
+    address varchar(100) not null,
+    course_id integer not null,
+    foreign key (course_id) references course(course_id)
+)

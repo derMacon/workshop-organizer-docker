@@ -20,7 +20,7 @@
             th:text="${announcement.publishingDate}">date</h6>
 
 
-        <div th:switch="${announcement.content.length() >= 170}">
+        <div th:switch="${announcement.content != null && announcement.content.length() >= 170}">
             <p th:case="${true}"class="card-text"
                th:text="${announcement.content.substring(1, 170)} + ' ...'">
             </p>
@@ -30,8 +30,9 @@
 
         <div class="btn-group">
             <a href="#" class="card-link">See full announcment</a>
-            <a href="#" class="card-link text-secondary">Previous announcment</a>
-            <a href="#" class="card-link text-secondary">Next announcment</a>
+            <a href="#" class="card-link text-secondary" th:onclick="'alert(\'test\');'">Previous
+                announcement</a>
+            <a href="#" class="card-link text-secondary">Next announcement</a>
         </div>
 
     </div>

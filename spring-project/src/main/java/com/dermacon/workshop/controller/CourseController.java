@@ -22,6 +22,8 @@ public class CourseController extends ModelAttributeProvider {
 
     private static Logger log = Logger.getLogger(DefaultController.class);
 
+    private int currAnnouncementIdx = 0;
+
     @Autowired
     private CourseService courseService;
 
@@ -77,11 +79,14 @@ public class CourseController extends ModelAttributeProvider {
         model.addAttribute("isEnrolled", courseService.currUserIsEnrolled(course));
         model.addAttribute("meetings", meetingService.getAllMeetings(course));
 
-        // if the person created the course or the person is an admin
-        return courseService.loggedInPersonCanEditCourse(course)
-                ? SPECIFIC_PATH + "specificCourse_manager"
-                : SPECIFIC_PATH + "specificCourse_user";
+        return SPECIFIC_PATH + "specificCourse";
     }
+
+//    @RequestMapping(path = "/specific")
+//    public String nextAnnouncement() {
+//        currAnnouncementIdx++;
+//        currAnnouncementIdx = currAnnouncementIdx % courseService.
+//    }
 
 
     /* ---------- user related methods ---------- */

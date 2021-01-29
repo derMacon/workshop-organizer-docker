@@ -1,0 +1,45 @@
+<!--source: https://codepen.io/marcobiedermann/pen/gReMQy-->
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <title>title</title>
+</head>
+<body>
+
+<div class="flex">
+
+    <a class="btn btn-outline-dark"
+       th:href="@{'/manager/createAnnouncement?courseId=' + ${currCourse.courseId}}">
+        Create Announcement
+    </a>
+
+    <a class="btn btn-outline-dark"
+       th:href="@{'/manager/editAnnouncement?courseId=' + ${currCourse.courseId}}">
+        Edit Announcements
+    </a>
+
+    <a class="btn btn-outline-dark"
+       th:href="@{/manager/editParticipants}">
+        Edit participant list
+    </a>
+
+    <a class="btn btn-outline-dark"
+       th:href="@{'/manager/removeCourse?id=' + ${currCourse.courseId}}">
+        Close Course
+    </a>
+
+    <a class="btn btn-outline-dark"
+       th:href="@{/manager/createMeeting}">
+        Create Meeting
+    </a>
+
+    <a class="btn btn-outline-dark"
+       th:href="@{/manager/editMeeting}">
+        Edit Meetings
+    </a>
+
+</div>
+
+</body>
+</html>

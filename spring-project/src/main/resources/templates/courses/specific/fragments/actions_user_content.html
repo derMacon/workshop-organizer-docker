@@ -15,12 +15,9 @@
 
     <a th:if="${isEnrolled}" class="btn btn-outline-dark"
        th:href="@{'/courses/dropout?courseId=' + ${currCourse.courseId}}">
-        dropout</a>
+        dropout
+    </a>
 
-    <!--            <a th:if="${!currUserRole.name().equals('ROLE_USER')}" class="btn btn-dark"-->
-    <!--               th:href="@{'/courses/createAnnouncement?id=' +-->
-    <!--            ${currCourse.courseId}}">create-->
-    <!--                announcement</a>-->
 </div>
 
 </body>
