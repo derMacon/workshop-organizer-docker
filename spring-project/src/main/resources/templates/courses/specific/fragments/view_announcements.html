@@ -13,7 +13,7 @@
     <li>No announcement yet</li>
 </ul>
 
-<div class="card" th:each="announcement : ${currCourse.announcements}">
+<div class="card" th:with="announcement=${currCourse.announcements[0]}">
     <div class="card-body">
         <h5 class="card-title" th:text="${announcement.title}">title</h5>
         <h6 class="card-subtitle mb-2 text-muted"
@@ -21,7 +21,7 @@
 
 
         <div th:switch="${announcement.content != null && announcement.content.length() >= 170}">
-            <p th:case="${true}"class="card-text"
+            <p th:case="${true}" class="card-text"
                th:text="${announcement.content.substring(1, 170)} + ' ...'">
             </p>
 
@@ -30,9 +30,8 @@
 
         <div class="btn-group">
             <a href="#" class="card-link">See full announcment</a>
-            <a href="#" class="card-link text-secondary" th:onclick="'alert(\'test\');'">Previous
-                announcement</a>
-            <a href="#" class="card-link text-secondary">Next announcement</a>
+            <a href="#" class="card-link text-secondary" th:onclick="'alert(\'test\');'">
+                See all announcements</a>
         </div>
 
     </div>
