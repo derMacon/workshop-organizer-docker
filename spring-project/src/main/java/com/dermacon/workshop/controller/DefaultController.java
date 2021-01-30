@@ -35,6 +35,11 @@ public class DefaultController extends ModelAttributeProvider {
         return "help";
     }
 
+    @RequestMapping("/contact")
+    public String contactInfo() {
+        return "contactInfo";
+    }
+
     /**
      * https://stackoverflow.com/questions/20848312/how-to-correctly-logout-user-in-spring-security
      */

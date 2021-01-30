@@ -56,8 +56,13 @@ public class CourseService {
         return courseRepository.findAll();
     }
 
-    public Iterable<Course> createdCourses() {
+    // todo do we really need this? Just use the next method...
+    public Iterable<Course> findCreatedCourses() {
         return courseRepository.findAllByHost(personService.getLoggedInPerson());
+    }
+
+    public Iterable<Course> findCreatedCourses(long personId) {
+        return courseRepository.findAllByHost(personService.findById(personId));
     }
 
     public Iterable<Person> getAllCreators() {

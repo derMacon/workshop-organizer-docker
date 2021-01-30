@@ -29,7 +29,7 @@ public class PersonService {
     private PersonRepository personRepository;
 
     @Autowired
-    private AppUserRepository userRepository;
+    private AppUserRepository appUserRepository;
 
     @Autowired
     private MailService mailService;
@@ -70,7 +70,7 @@ public class PersonService {
                     .getAuthentication()
                     .getPrincipal()).getUsername();
 
-            return userRepository.findByUsername(username);
+            return appUserRepository.findByUsername(username);
     }
 
     public Iterable<Person> getAllPersons() {
@@ -82,7 +82,7 @@ public class PersonService {
             throw new EmailAlreadyExistsException();
         }
 
-        if (userRepository.findByUsername(signupInfo.getUsername()) != null) {
+        if (appUserRepository.findByUsername(signupInfo.getUsername()) != null) {
             throw new UsernameAlreadyExistsException();
         }
 
@@ -102,6 +102,10 @@ public class PersonService {
 
         personRepository.save(person);
         mailService.sendAccountConfirmation(person);
+    }
+
+    public Person findById(long personId) {
+        return personRepository.findByPersonId(personId);
     }
 
     // todo check if needed

@@ -23,8 +23,12 @@
     </ul>
 
     <ul th:each="creator : ${creators}">
-        <li th:text="${creator.getFirstname()} + ' ' + ${creator.getSurname()}">
-            creator
+        <li>
+            <a class="nav-link"
+               th:href="@{'/profile/specific?personId=' + ${creator.personId}}"
+               th:text="${creator.getFirstname()} + ' ' + ${creator.getSurname()}">
+                creator
+            </a>
         </li>
     </ul>
 

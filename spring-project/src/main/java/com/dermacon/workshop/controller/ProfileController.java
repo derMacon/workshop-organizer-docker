@@ -1,6 +1,9 @@
 package com.dermacon.workshop.controller;
 
+import com.dermacon.workshop.data.Person;
+import com.dermacon.workshop.service.CourseService;
 import com.dermacon.workshop.service.PersonService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -12,9 +15,13 @@ public class ProfileController extends ModelAttributeProvider {
 
     private static final String SPECIFIC_PATH = "/profile/specific/";
 
+    @Autowired
     private PersonService personService;
 
-    /* ---------- Courses overview ---------- */
+    @Autowired
+    private CourseService courseService;
+
+    /* ---------- Profile overview ---------- */
 
     @RequestMapping(value = {"/", "/all"})
     public String showAllProfiles(Model model) {
@@ -36,9 +43,11 @@ public class ProfileController extends ModelAttributeProvider {
 
     @RequestMapping(value = {"/specific"})
     public String showSpecificProfile(Model model, @RequestParam long personId) {
-        System.out.println("todo: /showSpecificProfile=" + personId);
+        Person p = personService.findById(personId);
+        model.addAttribute("selectedPerson", p);
+        model.addAttribute("enrolledCourses", p.getCourses());
+        model.addAttribute("createdCourses", courseService.findCreatedCourses(personId));
 
-        model.addAttribute("selectedPerson", personService.getLoggedInPerson());
         return SPECIFIC_PATH + "specificProfile";
     }
 

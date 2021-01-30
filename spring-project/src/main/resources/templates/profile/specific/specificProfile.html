@@ -21,7 +21,47 @@
 <div th:replace="fragments/header_bootstrap :: header_bootstrap"></div>
 
 <div class="container pt-5">
-    <h3 th:text="${selectedPerson.firstname}">name</h3>
+    <h3>Personendaten</h3>
+    <ul>
+        <li th:text="'name: ' + ${selectedPerson.firstname} + ' ' + ${selectedPerson.surname}">
+            name
+        </li>
+        <li th:text="'mail: ' + ${selectedPerson.email}">mail</li>
+        <li th:text="'username: ' + ${selectedPerson.user.username}">username</li>
+        <li th:text="'role: ' + ${selectedPerson.user.role}">role</li>
+    </ul>
+
+    <div th:if="${!createdCourses.empty}">
+        <h3>Created Courses</h3>
+        <table>
+            <tr>
+                <th>Coursename</th>
+                <th>summary</th>
+                <th>host</th>
+                <th>participants</th>
+            </tr>
+            <tr th:each="course : ${createdCourses}">
+                <td th:text="${course.courseName}">coursename</td>
+                <td th:text="${course.courseSummary}">summary</td>
+                <td th:text="${course.host.firstname} + ' ' + ${course.host.surname}">host</td>
+                <td th:text="${course.maxParticipantCount} + '/' + ${course.maxParticipantCount}">
+                    participant count
+                </td>
+            </tr>
+        </table>
+    </div>
+
+    <div th:if="${!enrolledCourses.empty}">
+        <h3>Enrolled Courses</h3>
+        <ul th:each="course : ${enrolledCourses}">
+            <li th:text="${course.courseName}">coursename</li>
+            <li th:text="${course.host}">host</li>
+            <li th:text="${course.maxParticipantCount} + '/' + ${course.maxParticipantCount}">
+                participant count
+            </li>
+        </ul>
+    </div>
+
 </div>
 
 <!--<div th:insert="fragments/footer :: footer"></div>-->

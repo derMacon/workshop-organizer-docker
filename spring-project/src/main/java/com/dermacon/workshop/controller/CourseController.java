@@ -46,7 +46,7 @@ public class CourseController extends ModelAttributeProvider {
 
     @RequestMapping(path = "/created")
     public String showCreatedCourses(Model model) {
-        return showCoursesOverview(model, courseService.createdCourses());
+        return showCoursesOverview(model, courseService.findCreatedCourses());
     }
 
     private String showCoursesOverview(Model model, Iterable<Course> courses) {
