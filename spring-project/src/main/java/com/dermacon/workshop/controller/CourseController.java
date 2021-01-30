@@ -82,12 +82,6 @@ public class CourseController extends ModelAttributeProvider {
         return SPECIFIC_PATH + "specificCourse";
     }
 
-//    @RequestMapping(path = "/specific")
-//    public String nextAnnouncement() {
-//        currAnnouncementIdx++;
-//        currAnnouncementIdx = currAnnouncementIdx % courseService.
-//    }
-
 
     /* ---------- user related methods ---------- */
 
