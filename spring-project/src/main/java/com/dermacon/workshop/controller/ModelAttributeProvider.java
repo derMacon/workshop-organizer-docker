@@ -12,7 +12,6 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 @Controller
 public class ModelAttributeProvider {
 
-
     @Autowired
     private PersonService personService;
 

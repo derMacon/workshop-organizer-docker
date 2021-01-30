@@ -22,8 +22,6 @@ public class CourseController extends ModelAttributeProvider {
 
     private static Logger log = Logger.getLogger(DefaultController.class);
 
-    private int currAnnouncementIdx = 0;
-
     @Autowired
     private CourseService courseService;
 

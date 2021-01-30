@@ -65,7 +65,9 @@
 
                     <li class="nav-item">
                         <a class="nav-link"
-                           th:text="${loggedInPerson?.firstname} + ' ' + ${loggedInPerson?.surname}"></a>
+                           th:text="${loggedInPerson?.firstname} + ' ' + ${loggedInPerson?.surname}"
+                           th:href="@{'/profile/specific?personId=' + ${loggedInPerson.personId}}"
+                        ></a>
                     </li>
 
                     <li class="nav-item">
