@@ -40,19 +40,36 @@
                         Max Participantcount
                     </span>
                 </td>
-                <td>
-                    <div class="d-flex" th:switch="${course.participants.contains(currPerson)}">
-                        <p th:case="${true}">
-                            <i class="fas fa-sign-out-alt"></i>
-                            <a th:href="@{'/courses/specific?id=' + ${course.courseId}}"
-                               th:text="${'  sign out '}"></a>
-                        </p>
-                        <p th:case="*">
-                            <i class="fas fa-sign-in-alt"></i>
-                            <a th:href="@{'/courses/specific?id=' + ${course.courseId}}"
-                               th:text="${'  sign in'}"></a>
-                        </p>
-                    </div>
+                <td th:with="userCreatedCourse=${course.host.equals(loggedInPerson)}">
+                    <p th:if="${userCreatedCourse}">
+                        <i class="fas fa-sign-out-alt"></i>
+                        <a th:href="@{'/courses/specific?id=' + ${course.courseId}}"
+                           th:text="${'  see course '}"></a>
+                    </p>
+                    <p
+                            th:if="${!userCreatedCourse && course.participants.contains(currPerson)}">
+                        <i class="fas fa-sign-out-alt"></i>
+                        <a th:href="@{'/courses/specific?id=' + ${course.courseId}}"
+                           th:text="${'  sign out '}"></a>
+                    </p>
+                    <p
+                            th:if="${!userCreatedCourse && !course.participants.contains(currPerson)}">
+                        <i class="fas fa-sign-out-alt"></i>
+                        <a th:href="@{'/courses/specific?id=' + ${course.courseId}}"
+                           th:text="${'  sign in '}"></a>
+                    </p>
+<!--                    <div class="d-flex" th:switch="${course.participants.contains(currPerson)}">-->
+<!--                        <p th:case="${true}">-->
+<!--                            <i class="fas fa-sign-out-alt"></i>-->
+<!--                            <a th:href="@{'/courses/specific?id=' + ${course.courseId}}"-->
+<!--                               th:text="${'  sign out '}"></a>-->
+<!--                        </p>-->
+<!--                        <p th:case="*">-->
+<!--                            <i class="fas fa-sign-in-alt"></i>-->
+<!--                            <a th:href="@{'/courses/specific?id=' + ${course.courseId}}"-->
+<!--                               th:text="${'  sign in'}"></a>-->
+<!--                        </p>-->
+<!--                    </div>-->
                 </td>
             </tr>
             </tr>
