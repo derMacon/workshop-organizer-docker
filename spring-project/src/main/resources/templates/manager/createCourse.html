@@ -38,17 +38,6 @@
                        th:placeholder="name">
             </div>
 
-
-<!--            <input th:field="*{courseName}"-->
-<!--                   th:value="${inputCourse.courseName}"-->
-<!--                   th:placeholder="name"-->
-<!--                   type="text"/>-->
-
-            <!--    <input th:field="*{courseSummary}"-->
-            <!--           th:value="${inputCourse.courseSummary}"-->
-            <!--           th:placeholder="summary"-->
-            <!--           type="text"/>-->
-
             <div class="form-outline">
                 <label class="form-label" for="textAreaSummary">Summary</label>
                 <textarea class="form-control" rows="2" th:field="*{courseSummary}"
@@ -63,6 +52,7 @@
                           form="createCourseForm" id="textAreaDescription"></textarea>
             </div>
 
+            <br>
 
             <div class="form-group">
                 <label class="form-label" for="participantCntFld">Max. Participant Count</label>
