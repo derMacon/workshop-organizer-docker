@@ -208,8 +208,7 @@ public class Course {
     public int hashCode() {
         return host.hashCode()
                 * courseName.hashCode()
-                * maxParticipantCount
-                * participants.hashCode();
+                * maxParticipantCount;
     }
 
     /**

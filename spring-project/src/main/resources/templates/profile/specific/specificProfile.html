@@ -53,13 +53,22 @@
 
     <div th:if="${!enrolledCourses.empty}">
         <h3>Enrolled Courses</h3>
-        <ul th:each="course : ${enrolledCourses}">
-            <li th:text="${course.courseName}">coursename</li>
-            <li th:text="${course.host}">host</li>
-            <li th:text="${course.maxParticipantCount} + '/' + ${course.maxParticipantCount}">
-                participant count
-            </li>
-        </ul>
+        <table>
+            <tr>
+                <th>coursename</th>
+                <th>summary</th>
+                <th>host</th>
+                <th>participants</th>
+            </tr>
+            <tr th:each="course : ${createdCourses}">
+                <td th:text="${course.courseName}">coursename</td>
+                <td th:text="${course.courseSummary}">summary</td>
+                <td th:text="${course.host.firstname} + ' ' + ${course.host.surname}">host</td>
+                <td th:text="${course.maxParticipantCount} + '/' + ${course.maxParticipantCount}">
+                    participant count
+                </td>
+            </tr>
+        </table>
     </div>
 
 </div>
