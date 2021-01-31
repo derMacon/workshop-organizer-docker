@@ -13,7 +13,9 @@
     <li>No announcement yet</li>
 </ul>
 
-<div class="card" th:with="announcement=${currCourse.announcements[0]}">
+<div class="card"
+     th:if="${!currCourse.announcements.empty}"
+     th:with="announcement=${currCourse.announcements[0]}">
     <div class="card-body">
         <h5 class="card-title" th:text="${announcement.title}">title</h5>
         <h6 class="card-subtitle mb-2 text-muted"

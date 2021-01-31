@@ -20,47 +20,68 @@
 
 <div th:replace="fragments/header_bootstrap :: header_bootstrap"></div>
 
-<h3>Create new Course</h3>
+<div class="container pt-5">
+    <h3>Create new Course</h3>
 
-<form action="#" method="post"
-      th:action="@{/manager/createCourse}"
-      th:object="${inputCourse}"
-      th:placeholder="Course">
+    <div class="form-outline">
+        <form action="#" method="post"
+              id="createCourseForm"
+              th:action="@{/manager/createCourse}"
+              th:object="${inputCourse}"
+              th:placeholder="Course">
 
-    <input th:field="*{courseName}"
-           th:value="${inputCourse.courseName}"
-           th:placeholder="name"
-           type="text"/>
-
-    <input th:field="*{courseSummary}"
-           th:value="${inputCourse.courseSummary}"
-           th:placeholder="summary"
-           type="text"/>
-
-    <input th:field="*{courseDescription}"
-           th:value="${inputCourse.courseDescription}"
-           th:placeholder="description"
-           type="text"/>
-
-    <input th:field="*{maxParticipantCount}"
-           th:value="${inputCourse.maxParticipantCount}"
-           th:placeholder="count"
-           type="number"/>
-
-    <!--    <select th:field="*{host}">-->
-    <!--        <option value=""></option>-->
-    <!--        <option th:each="host : ${hosts}"-->
-    <!--                th:value="${host.personId}"-->
-    <!--                th:text="${host.firstname} + ${host.surname}"></option>-->
-
-    </select>
+            <div class="form-group">
+                <label for="createCourseForm">Course Name</label>
+                <input type="text" class="form-control" id="createCourseForm"
+                       th:field="*{courseName}"
+                       th:value="${inputCourse.courseName}"
+                       th:placeholder="name">
+            </div>
 
 
-    <button type="submit" value="add">
-        Add Workshop
-    </button>
+<!--            <input th:field="*{courseName}"-->
+<!--                   th:value="${inputCourse.courseName}"-->
+<!--                   th:placeholder="name"-->
+<!--                   type="text"/>-->
 
-</form>
+            <!--    <input th:field="*{courseSummary}"-->
+            <!--           th:value="${inputCourse.courseSummary}"-->
+            <!--           th:placeholder="summary"-->
+            <!--           type="text"/>-->
+
+            <div class="form-outline">
+                <label class="form-label" for="textAreaSummary">Summary</label>
+                <textarea class="form-control" rows="2" th:field="*{courseSummary}"
+                          form="createCourseForm" id="textAreaSummary"></textarea>
+            </div>
+
+            <br>
+
+            <div class="form-outline">
+                <label class="form-label" for="textAreaDescription">Description</label>
+                <textarea class="form-control" rows="6" th:field="*{courseDescription}"
+                          form="createCourseForm" id="textAreaDescription"></textarea>
+            </div>
+
+
+            <div class="form-group">
+                <label class="form-label" for="participantCntFld">Max. Participant Count</label>
+                <input th:field="*{maxParticipantCount}"
+                       th:value="${inputCourse.maxParticipantCount}"
+                       th:placeholder="count"
+                       class="form-control"
+                       id="participantCntFld"
+                       type="number"/>
+            </div>
+
+            <button type="submit" value="add" class="form-control">
+                Add Workshop
+            </button>
+
+        </form>
+    </div>
+
+</div>
 
 <!--Needed for animated header-->
 <script th:src="@{/webjars/jquery/jquery.min.js}"></script>

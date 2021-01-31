@@ -19,7 +19,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 @RequestMapping("manager")
-public class ManagerController {
+public class ManagerController extends ModelAttributeProvider {
 
     private static Logger log = Logger.getLogger(ManagerController.class);
 
