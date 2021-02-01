@@ -30,6 +30,11 @@ public class DefaultController extends ModelAttributeProvider {
         return "index";
     }
 
+//    @RequestMapping("/login")
+//    public String getLoginView() {
+//        return "public/login";
+//    }
+
     @RequestMapping("/help")
     public String help() {
         return "help";

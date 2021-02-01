@@ -9,7 +9,7 @@ create table if not exists app_user
 create table if not exists persistent_logins
 (
     username  varchar(500) not null,
-    series    serial primary key,
+    series    varchar(64) primary key,
     token     varchar(64)  not null,
     last_used timestamp    not null
 );
@@ -60,4 +60,4 @@ create table if not exists meeting(
     address varchar(100) not null,
     course_id integer not null,
     foreign key (course_id) references course(course_id)
-)
+);
